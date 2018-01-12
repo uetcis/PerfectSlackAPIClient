@@ -47,7 +47,7 @@ public struct SlackMessage {
     /// Flag if markdown should be enabled or not
     var markdownEnabled: Bool?
     
-    /// The Slack Message Builder Preview URL in order
+    /// The Slack Message Builder Preview URL (Read-Only) in order
     /// to get a brief look of how your message will be displayed
     var messageBuilderPreviewURL: String {
         get {
