@@ -10,6 +10,7 @@ import PerfectHTTP
 import PerfectCURL
 import ObjectMapper
 
+/// Slack API Client
 public enum PerfectSlackAPIClient {
     /// Send a SlackMessage
     case send(message: SlackMessage)
