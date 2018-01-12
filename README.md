@@ -96,9 +96,7 @@ You can generate a [Slack Message Builder](https://api.slack.com/docs/messages/b
 
 ```swift
 // Initialize SlackMessage
-var message = SlackMessage(text: "Posted via PerfectSlackAPIClient")
-
-// Configure the message...
+let message = SlackMessage(text: "Posted via PerfectSlackAPIClient")
 
 // Print Slack Message Builder Preview URL
 print(message.messageBuilderPreviewURL)
