@@ -12,7 +12,7 @@
 	</a>
 </p>
 
-PerfectSlackAPIClient is an API Client to access the Slack API from your [Perfect Server Side Swift](https://github.com/PerfectlySoft/Perfect) application. It is build on top of [PerfectAPIClient](https://github.com/SvenTiigi/PerfectAPIClient).
+PerfectSlackAPIClient is an API Client to access the Slack API from your [Perfect Server Side Swift](https://github.com/PerfectlySoft/Perfect) application. It is build on top of [PerfectAPIClient](https://github.com/SvenTiigi/PerfectAPIClient), a network abstraction layer to perform network requests from your Perfect Server Side Swift application
 
 # Installation
 To integrate using Apple's [Swift Package Manager](https://swift.org/package-manager/), add the following as a dependency to your `Package.swift`:
