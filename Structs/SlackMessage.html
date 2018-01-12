@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SlackMessage Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/SlackMessage" class="dashAnchor"></a>
+    <a title="SlackMessage Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">PerfectSlackAPIClient Docs</a> (88% documented)</p>
+        <p class="header-right"><a href="https://github.com/SvenTiigi/PerfectSlackAPIClient"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">PerfectSlackAPIClient Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        SlackMessage Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/PerfectSlackAPIClient.html">PerfectSlackAPIClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PerfectSlackAPIClient/Configuration.html">– Configuration</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String/MarkdownFormat.html">– MarkdownFormat</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/SlackAttachment.html">SlackAttachment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SlackAttachment/Action.html">– Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SlackAttachment/Field.html">– Field</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SlackAttachment/AttachmentType.html">– AttachmentType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SlackAttachment/Color.html">– Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SlackMessage.html">SlackMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SlackMessage/ResponseType.html">– ResponseType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SlackMessage</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SlackMessage</span></code></pre>
+
+                </div>
+              </div>
+            <p>Messages act as delivery vehicle for all interactive message experiences.
+Use them not only when initiating messages, but also when updating or creating evolving workflows.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageV4textSSSgv"></a>
+                    <a name="//apple_ref/swift/Property/text" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageV4textSSSgv">text</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The basic text of the message.
+Only required if the message contains zero attachments.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageV11attachmentsSayAA0B10AttachmentVGSgv"></a>
+                    <a name="//apple_ref/swift/Property/attachments" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageV11attachmentsSayAA0B10AttachmentVGSgv">attachments</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">attachments</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SlackAttachment.html">SlackAttachment</a></span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageV15threadTimestampSSSgv"></a>
+                    <a name="//apple_ref/swift/Property/threadTimestamp" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageV15threadTimestampSSSgv">threadTimestamp</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>When replying to a parent message, this value is the ts value
+of the parent message to the thread. See message threading for more context.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">threadTimestamp</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageV12responseTypeAC08ResponseF0OSgv"></a>
+                    <a name="//apple_ref/swift/Property/responseType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageV12responseTypeAC08ResponseF0OSgv">responseType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Expects one of two values:
+in_channel — display the message to all users in the channel where a message button was clicked.
+Messages sent in response to invoked button actions are set to in_channel by default.
+ephemeral — display the message only to the user who clicked a message button.
+Messages sent in response to Slash commands are set to ephemeral by default.
+This field cannot be specified for a brand new message and must be used only in response
+to the execution of message button action or a slash command response.
+Once a response_type is set, it cannot be changed when updating the message.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">responseType</span><span class="p">:</span> <span class="kt"><a href="../Structs/SlackMessage/ResponseType.html">ResponseType</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageV15replaceOriginalSbSgv"></a>
+                    <a name="//apple_ref/swift/Property/replaceOriginal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageV15replaceOriginalSbSgv">replaceOriginal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Used only when creating messages in response to a button action invocation.
+When set to true, the inciting message will be replaced by this message you&rsquo;re providing.
+When false, the message you&rsquo;re providing is considered a brand new message.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">replaceOriginal</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageV14deleteOriginalSbSgv"></a>
+                    <a name="//apple_ref/swift/Property/deleteOriginal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageV14deleteOriginalSbSgv">deleteOriginal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Used only when creating messages in response to a button action invocation.
+When set to true, the inciting message will be deleted and if a message is provided,
+it will be posted as a brand new message.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">deleteOriginal</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageV15markdownEnabledSbSgv"></a>
+                    <a name="//apple_ref/swift/Property/markdownEnabled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageV15markdownEnabledSbSgv">markdownEnabled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Flag if markdown should be enabled or not</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">markdownEnabled</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageV24messageBuilderPreviewURLSSv"></a>
+                    <a name="//apple_ref/swift/Property/messageBuilderPreviewURL" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageV24messageBuilderPreviewURLSSv">messageBuilderPreviewURL</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Slack Message Builder Preview URL (Read-Only) in order
+to get a brief look of how your message will be displayed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">messageBuilderPreviewURL</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageVACSSSg4text_SayAA0B10AttachmentVGSg11attachmentstcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(text:attachments:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageVACSSSg4text_SayAA0B10AttachmentVGSg11attachmentstcfc">init(text:attachments:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Default initializer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">attachments</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SlackAttachment.html">SlackAttachment</a></span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The SlackMessage Text</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attachments</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The SlackAttachments</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageV12ResponseTypeO"></a>
+                    <a name="//apple_ref/swift/Enum/ResponseType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageV12ResponseTypeO">ResponseType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The SlackMessage Response Type</p>
+
+                        <a href="../Structs/SlackMessage/ResponseType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">ResponseType</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageVACSg12ObjectMapper3MapC3map_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(map:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageVACSg12ObjectMapper3MapC3map_tcfc">init(map:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>ObjectMapper initializer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">map</span><span class="p">:</span> <span class="kt">Map</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageV7mappingy12ObjectMapper3MapC3map_tF"></a>
+                    <a name="//apple_ref/swift/Method/mapping(map:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageV7mappingy12ObjectMapper3MapC3map_tF">mapping(map:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Mapping</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">mapping</span><span class="p">(</span><span class="nv">map</span><span class="p">:</span> <span class="kt">Map</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageV18escapeStringValues33_2A3A12C1769599AFDFD419CFE90993E5LLyyF"></a>
+                    <a name="//apple_ref/swift/Method/escapeStringValues()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageV18escapeStringValues33_2A3A12C1769599AFDFD419CFE90993E5LLyyF">escapeStringValues()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Escape Strings before mapping</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">escapeStringValues</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>Copyright 2018 Sven Tiigi</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

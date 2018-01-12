@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PerfectSlackAPIClient  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="PerfectSlackAPIClient  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">PerfectSlackAPIClient Docs</a> (88% documented)</p>
+        <p class="header-right"><a href="https://github.com/SvenTiigi/PerfectSlackAPIClient"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">PerfectSlackAPIClient Reference</a>
+        <img id="carat" src="img/carat.png" />
+        PerfectSlackAPIClient  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/PerfectSlackAPIClient.html">PerfectSlackAPIClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/PerfectSlackAPIClient/Configuration.html">– Configuration</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/String/MarkdownFormat.html">– MarkdownFormat</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/SlackAttachment.html">SlackAttachment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SlackAttachment/Action.html">– Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SlackAttachment/Field.html">– Field</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SlackAttachment/AttachmentType.html">– AttachmentType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SlackAttachment/Color.html">– Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SlackMessage.html">SlackMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SlackMessage/ResponseType.html">– ResponseType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <p align="center">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/master/.assets/logo.png" alt="logo">
+</p>
+
+<p><br/></p>
+
+<p align="center">
+    <a href="https://developer.apple.com/swift/" target="_blank">
+        <img src="https://img.shields.io/badge/Swift-4.0-orange.svg" alt="Swift 3.2">
+    </a>
+    <img src="https://img.shields.io/badge/platform-macOS%20%7C%20Linux-yellow.svg" alt="Platform">
+    <a href="https://twitter.com/SvenTiigi" target="_blank">
+        <img src="https://img.shields.io/badge/contact-@SvenTiigi-blue.svg" alt="@SvenTiigi">
+    </a>
+</p>
+
+<p>PerfectSlackAPIClient is an API Client to access the <a href="https://api.slack.com">Slack API</a> from your <a href="https://github.com/PerfectlySoft/Perfect">Perfect Server Side Swift</a> application. It is build on top of <a href="https://github.com/SvenTiigi/PerfectAPIClient">PerfectAPIClient</a>, a network abstraction layer to perform network requests from your Perfect Server Side Swift application</p>
+<h1 id='installation' class='heading'>Installation</h1>
+
+<p>To integrate using Apple&rsquo;s <a href="https://swift.org/package-manager/">Swift Package Manager</a>, add the following as a dependency to your <code>Package.swift</code>:</p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/SvenTiigi/PerfectSlackAPIClient.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"1.0.0"</span><span class="p">)</span>
+</code></pre>
+
+<p>Here&rsquo;s an example <code>PackageDescription</code>:</p>
+<pre class="highlight swift"><code><span class="c1">// swift-tools-version:4.0</span>
+
+<span class="kd">import</span> <span class="kt">PackageDescription</span>
+
+<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="nf">Package</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="s">"MyPackage"</span><span class="p">,</span>
+    <span class="nv">products</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="nf">library</span><span class="p">(</span>
+            <span class="nv">name</span><span class="p">:</span> <span class="s">"MyPackage"</span><span class="p">,</span>
+            <span class="nv">targets</span><span class="p">:</span> <span class="p">[</span><span class="s">"MyPackage"</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">],</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/SvenTiigi/PerfectSlackAPIClient.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"1.0.0"</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="nv">targets</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="nf">target</span><span class="p">(</span>
+            <span class="nv">name</span><span class="p">:</span> <span class="s">"MyPackage"</span><span class="p">,</span>
+            <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="s">"PerfectSlackAPIClient"</span><span class="p">]</span>
+        <span class="p">),</span>
+        <span class="o">.</span><span class="nf">testTarget</span><span class="p">(</span>
+            <span class="nv">name</span><span class="p">:</span> <span class="s">"MyPackageTests"</span><span class="p">,</span>
+            <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="s">"MyPackage"</span><span class="p">,</span> <span class="s">"PerfectSlackAPIClient"</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</code></pre>
+<h1 id='setup' class='heading'>Setup</h1>
+
+<p>In order to send a message to your Slack-Channel, you have to generate a <code>Webhook URL</code> for your Slack-Workspace.
+Checkout the Slack API <a href="https://api.slack.com/tutorials/slack-apps-hello-world">Hello world example</a>. After you successfully generated a Slack Webhook URL you can configure the <code><a href="Enums/PerfectSlackAPIClient.html">PerfectSlackAPIClient</a></code>.</p>
+<pre class="highlight swift"><code><span class="c1">// Configure the Webhook URL</span>
+<span class="kt">PerfectSlackAPIClient</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="n">webhookURL</span> <span class="o">=</span> <span class="s">"YOUR_WEBHOOK_URL"</span>
+</code></pre>
+
+<p>It is recommend to set the Webhook URL in your initialization code just before you start your <code>PerfectHTTPServer</code>.</p>
+<h1 id='usage' class='heading'>Usage</h1>
+
+<p>The following example demonstrates how to post a <code><a href="Structs/SlackMessage.html">SlackMessage</a></code>.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PerfectAPIClient</span>
+<span class="kd">import</span> <span class="kt">PerfectSlackAPIClient</span>
+
+<span class="c1">// Initialize SlackMessage</span>
+<span class="k">var</span> <span class="nv">message</span> <span class="o">=</span> <span class="nf">SlackMessage</span><span class="p">()</span>
+<span class="n">message</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Hello Developer"</span><span class="o">.</span><span class="nf">toMarkdown</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="o">.</span><span class="n">code</span><span class="p">)</span>
+
+<span class="c1">// Initialize SlackAttachment</span>
+<span class="k">var</span> <span class="nv">attachment</span> <span class="o">=</span> <span class="nf">SlackAttachment</span><span class="p">()</span>
+<span class="n">attachment</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"Mindblown 🤯"</span>
+<span class="n">attachment</span><span class="o">.</span><span class="n">imageURL</span> <span class="o">=</span> <span class="s">"https://media.giphy.com/media/Um3ljJl8jrnHy/giphy.gif"</span>
+
+<span class="c1">// Add the attachment to the message</span>
+<span class="n">message</span><span class="o">.</span><span class="n">attachments</span> <span class="o">=</span> <span class="p">[</span><span class="n">attachment</span><span class="p">]</span>
+
+<span class="kt">PerfectSlackAPIClient</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="nf">request</span> <span class="p">{</span> <span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">APIClientResult</span><span class="o">&lt;</span><span class="kt">APIClientResponse</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
+    <span class="n">result</span><span class="o">.</span><span class="nf">analysis</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">response</span><span class="p">:</span> <span class="kt">APIClientResponse</span><span class="p">)</span> <span class="k">in</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="c1">// Check out your Slack-Channel 😎</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">payload</span><span class="p">)</span> <span class="c1">// "ok"</span>
+    <span class="p">},</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">APIClientError</span><span class="p">)</span> <span class="k">in</span>
+        <span class="c1">// SlackMessage could not be sent 😱</span>
+        <span class="c1">// Perform error.analysis(....) to get more information</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Fore more details on <code>APIClientResult</code>, <code>APIClientResponse</code> and error handling check out <a href="https://github.com/SvenTiigi/PerfectAPIClient">PerfectAPIClient</a>.</p>
+<h1 id='slack-message-builder-preview' class='heading'>Slack Message Builder Preview</h1>
+
+<p>You can generate a <a href="https://api.slack.com/docs/messages/builder">Slack Message Builder</a> URL from your <code><a href="Structs/SlackMessage.html">SlackMessage</a></code> to get a brief look of how your message will be presented in your Slack-Channel.</p>
+<pre class="highlight swift"><code><span class="c1">// Initialize SlackMessage</span>
+<span class="k">let</span> <span class="nv">message</span> <span class="o">=</span> <span class="nf">SlackMessage</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Posted via PerfectSlackAPIClient"</span><span class="p">)</span>
+
+<span class="c1">// Print Slack Message Builder Preview URL</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">messageBuilderPreviewURL</span><span class="p">)</span>
+</code></pre>
+
+<p>This example will generate the following url</p>
+
+<p><a href="https://api.slack.com/docs/messages/builder?msg=%7B%22text%22:%22Posted%20via%20PerfectSlackAPIClient%22%7D">https://api.slack.com/docs/messages/builder?msg=%7B%22text%22:%22Posted%20via%20PerfectSlackAPIClient%22%7D</a></p>
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/master/.assets/message_builder_example.png" alt="Message Builder Example Preview">
+</p>
+<h1 id='slack-messages-api' class='heading'>Slack Messages API</h1>
+
+<p>All properties are fully documented with the Slack Messages API definition. The complete documentation can be found at <a href="https://api.slack.com/docs/messages">https://api.slack.com/docs/messages</a>.</p>
+<h1 id='dependencies' class='heading'>Dependencies</h1>
+
+<p>PerfectSlackAPIClient is using the following dependencies:</p>
+
+<ul>
+<li><a href="https://github.com/SvenTiigi/PerfectAPIClient">PerfectAPIClient</a></li>
+</ul>
+<h1 id='contributing' class='heading'>Contributing</h1>
+
+<p>Contributions are very welcome 🙌 🤓</p>
+<h1 id='to-do' class='heading'>To-Do</h1>
+
+<ul>
+<li>[ ] Integrate the full Slack API</li>
+<li>[ ] Improve Unit-Tests</li>
+<li>[ ] Add Travis CI</li>
+<li>[ ] Add Github-Pages Jazzy documentation</li>
+</ul>
+<h1 id='license' class='heading'>License</h1>
+<pre class="highlight plaintext"><code>MIT License
+
+Copyright (c) 2017 Sven Tiigi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</code></pre>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>Copyright 2018 Sven Tiigi</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
