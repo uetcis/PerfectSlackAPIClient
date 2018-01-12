@@ -125,6 +125,7 @@ Contributions are very welcome 🙌 🤓
 - [ ] Integrate the full Slack API
 - [ ] Improve Unit-Tests
 - [ ] Add Travis CI
+- [ ] Add Github-Pages Jazzy documentation
 
 # License
 
