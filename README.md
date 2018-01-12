@@ -121,7 +121,7 @@ This example will generate the following url
 </p>
 
 ### Send
-As an alternative way of sendind a `SlackMessage` the object itself has a convienence function `send` to just send and forget or supply `success` and `failure` closure.
+As an alternative way of sendind a `SlackMessage`, the object itself has a convienence function `send` to just send and forget or supply `success` and `failure` closure.
 
 ```swift
 // Initialize SlackMessage
