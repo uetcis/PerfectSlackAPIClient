@@ -14,7 +14,7 @@
     <a title="SlackMessage Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">PerfectSlackAPIClient Docs</a> (88% documented)</p>
+        <p><a href="../index.html">PerfectSlackAPIClient Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/SvenTiigi/PerfectSlackAPIClient"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -136,7 +136,9 @@ Only required if the message contains zero attachments.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Provide a JSON array of attachment objects.
+Adds additional components to the message.
+Messages should contain no more than 20 attachments.</p>
 
                       </div>
                       <div class="declaration">
@@ -374,6 +376,64 @@ to get a brief look of how your message will be displayed</p>
                               <td>
                                 <div>
                                   <p>The SlackAttachments</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:21PerfectSlackAPIClient0B7MessageV4sendyy0aC00C8ResponseVcSg7success_yAE0C5ErrorOcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/send(success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:21PerfectSlackAPIClient0B7MessageV4sendyy0aC00C8ResponseVcSg7success_yAE0C5ErrorOcSg7failuretF">send(success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convienence function to send the SlackMessage with optional callbacks</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">send</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="p">((</span><span class="kt">APIClientResponse</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">APIClientError</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The optional success callback</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The optional error callback</p>
                                 </div>
                               </td>
                             </tr>

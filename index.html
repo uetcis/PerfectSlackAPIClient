@@ -13,7 +13,7 @@
     <a title="PerfectSlackAPIClient  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">PerfectSlackAPIClient Docs</a> (88% documented)</p>
+        <p><a href="index.html">PerfectSlackAPIClient Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/SvenTiigi/PerfectSlackAPIClient"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -92,6 +92,9 @@
         <img src="https://img.shields.io/badge/Swift-4.0-orange.svg" alt="Swift 3.2">
     </a>
     <img src="https://img.shields.io/badge/platform-macOS%20%7C%20Linux-yellow.svg" alt="Platform">
+    <a href="https://sventiigi.github.io/PerfectSlackAPIClient" target="_blank">
+        <img src="https://github.com/SvenTiigi/PerfectSlackAPIClient/blob/gh-pages/badge.svg" alt="Docs">
+    </a>
     <a href="https://twitter.com/SvenTiigi" target="_blank">
         <img src="https://img.shields.io/badge/contact-@SvenTiigi-blue.svg" alt="@SvenTiigi">
     </a>
@@ -135,15 +138,15 @@
 <h1 id='setup' class='heading'>Setup</h1>
 
 <p>In order to send a message to your Slack-Channel, you have to generate a <code>Webhook URL</code> for your Slack-Workspace.
-Check out the Slack API <a href="https://api.slack.com/tutorials/slack-apps-hello-world">Hello world example</a>. After you successfully generated a Slack Webhook URL you can configure the <code>PerfectSlackAPIClient</code>.</p>
+Check out the Slack API <a href="https://api.slack.com/tutorials/slack-apps-hello-world">Hello world example</a>. After you successfully generated a Slack Webhook URL you can configure the <code><a href="Enums/SlackAPIClient.html">SlackAPIClient</a></code>.</p>
 <pre class="highlight swift"><code><span class="c1">// Configure the Webhook URL</span>
-<span class="kt">PerfectSlackAPIClient</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="n">webhookURL</span> <span class="o">=</span> <span class="s">"YOUR_WEBHOOK_URL"</span>
+<span class="kt">SlackAPIClient</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="n">webhookURL</span> <span class="o">=</span> <span class="s">"YOUR_WEBHOOK_URL"</span>
 </code></pre>
 
 <p>It is recommend to set the Webhook URL in your initialization code just before you start your <code>PerfectHTTPServer</code>.</p>
 <h1 id='usage' class='heading'>Usage</h1>
 
-<p>The following example demonstrates how to post a <code><a href="Structs/SlackMessage.html">SlackMessage</a></code>.</p>
+<p>The following example demonstrates how to send a <code><a href="Structs/SlackMessage.html">SlackMessage</a></code>.</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PerfectAPIClient</span>
 <span class="kd">import</span> <span class="kt">PerfectSlackAPIClient</span>
 
@@ -160,7 +163,7 @@ Check out the Slack API <a href="https://api.slack.com/tutorials/slack-apps-hell
 <span class="n">message</span><span class="o">.</span><span class="n">attachments</span> <span class="o">=</span> <span class="p">[</span><span class="n">attachment</span><span class="p">]</span>
 
 <span class="c1">// Send SlackMessage</span>
-<span class="kt">PerfectSlackAPIClient</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="nf">request</span> <span class="p">{</span> <span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">APIClientResult</span><span class="o">&lt;</span><span class="kt">APIClientResponse</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
+<span class="kt">SlackAPIClient</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="nf">request</span> <span class="p">{</span> <span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">APIClientResult</span><span class="o">&lt;</span><span class="kt">APIClientResponse</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
     <span class="n">result</span><span class="o">.</span><span class="nf">analysis</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">response</span><span class="p">:</span> <span class="kt">APIClientResponse</span><span class="p">)</span> <span class="k">in</span>
  <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="c1">// Check out your Slack-Channel 😎</span>
  <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">payload</span><span class="p">)</span> <span class="c1">// "ok"</span>
@@ -172,7 +175,10 @@ Check out the Slack API <a href="https://api.slack.com/tutorials/slack-apps-hell
 </code></pre>
 
 <p>Fore more details on <code>APIClientResult</code>, <code>APIClientResponse</code> and error handling check out <a href="https://github.com/SvenTiigi/PerfectAPIClient">PerfectAPIClient</a>.</p>
-<h1 id='slack-message-builder-preview' class='heading'>Slack Message Builder Preview</h1>
+<h1 id='slackmessage' class='heading'>SlackMessage</h1>
+
+<p>The <code><a href="Structs/SlackMessage.html">SlackMessage</a></code> offers two important features which will be explained in the upcoming sections. </p>
+<h3 id='message-builder-preview' class='heading'>Message Builder Preview</h3>
 
 <p>You can generate a <a href="https://api.slack.com/docs/messages/builder">Slack Message Builder</a> URL from your <code><a href="Structs/SlackMessage.html">SlackMessage</a></code> to get a brief look of how your message will be presented in your Slack-Channel.</p>
 <pre class="highlight swift"><code><span class="c1">// Initialize SlackMessage</span>
@@ -189,6 +195,22 @@ Check out the Slack API <a href="https://api.slack.com/tutorials/slack-apps-hell
 <p align="center">
     <img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/gh-pages/readMeAssets/message_builder_example.png" alt="Message Builder Example Preview">
 </p>
+<h3 id='send' class='heading'>Send</h3>
+
+<p>As an alternative way of sendind a <code><a href="Structs/SlackMessage.html">SlackMessage</a></code> the object itself has a convienence function <code>send</code> to just send and forget or supply <code>success</code> and <code>failure</code> closure.</p>
+<pre class="highlight swift"><code><span class="c1">// Initialize SlackMessage</span>
+<span class="k">let</span> <span class="nv">message</span> <span class="o">=</span> <span class="nf">SlackMessage</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Foo Bar"</span><span class="p">)</span>
+
+<span class="c1">// Send and forget</span>
+<span class="n">message</span><span class="o">.</span><span class="nf">send</span><span class="p">()</span>
+
+<span class="c1">// Success and failure closure</span>
+<span class="n">message</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">response</span><span class="p">:</span> <span class="kt">APIClientResponse</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// Success</span>
+<span class="p">},</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">APIClientError</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// Failure</span>
+<span class="p">})</span>
+</code></pre>
 <h1 id='slack-messages-api' class='heading'>Slack Messages API</h1>
 
 <p>All properties are fully documented with the Slack Messages API definition. The complete documentation can be found at <a href="https://api.slack.com/docs/messages">https://api.slack.com/docs/messages</a>.</p>
