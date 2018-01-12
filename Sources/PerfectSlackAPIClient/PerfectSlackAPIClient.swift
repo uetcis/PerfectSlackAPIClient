@@ -21,7 +21,7 @@ public extension PerfectSlackAPIClient {
     
     struct Configuration {
         /// The Slack Webhook URL
-        static var webhookURL = ""
+        static var webhookURL = String()
     }
     
 }
