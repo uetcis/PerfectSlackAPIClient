@@ -98,7 +98,10 @@ SlackAPIClient.send(message).request { (result: APIClientResult<APIClientRespons
 
 Fore more details on `APIClientResult`, `APIClientResponse` and error handling check out [PerfectAPIClient](https://github.com/SvenTiigi/PerfectAPIClient).
 
-# Slack Message Builder Preview
+# SlackMessage
+The `SlackMessage` offers two important features which will be explained in the upcoming sections. 
+
+### Message Builder Preview
 You can generate a [Slack Message Builder](https://api.slack.com/docs/messages/builder) URL from your `SlackMessage` to get a brief look of how your message will be presented in your Slack-Channel.
 
 ```swift
@@ -116,6 +119,23 @@ This example will generate the following url
 <p align="center">
 	<img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/gh-pages/readMeAssets/message_builder_example.png" alt="Message Builder Example Preview">
 </p>
+
+### Send
+As an alternative way of sendind a `SlackMessage` the object itself has a convienence function `send` to just send and forget or supply `success` and `failure` closure.
+
+```swift
+let message = SlackMessage(text: "Foo Bar")
+
+// Send and forget
+message.send()
+
+// Success and failure closure
+message.send(success: { (response: APIClientResponse) in
+    // Success
+}, failure: { (error: APIClientError) in
+    // Failure
+})
+```
 
 # Slack Messages API
 All properties are fully documented with the Slack Messages API definition. The complete documentation can be found at [https://api.slack.com/docs/messages](https://api.slack.com/docs/messages).
