@@ -83,4 +83,4 @@ PerfectSlackAPIClient.send(message).request { (result: APIClientResult<APIClient
 
 ```
 
-Fore more details on `APIClientResult`, `APIClientResponse` and the error handling can be found on [PerfectAPIClient](https://github.com/SvenTiigi/PerfectAPIClient).
+Fore more details on `APIClientResult`, `APIClientResponse` and error handling check out [PerfectAPIClient](https://github.com/SvenTiigi/PerfectAPIClient).
