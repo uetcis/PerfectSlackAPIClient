@@ -47,6 +47,16 @@ public struct SlackMessage {
     /// Flag if markdown should be enabled or not
     var markdownEnabled: Bool?
     
+    /// Default initializer
+    ///
+    /// - Parameters:
+    ///   - text: The SlackMessage Text
+    ///   - attachments: The SlackAttachments
+    public init(text: String? = nil, attachments: [SlackAttachment]? = nil) {
+        self.text = text
+        self.attachments = attachments
+    }
+    
 }
 
 // MARK: Enums
