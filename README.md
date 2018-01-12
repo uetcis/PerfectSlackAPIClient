@@ -124,6 +124,7 @@ This example will generate the following url
 As an alternative way of sendind a `SlackMessage` the object itself has a convienence function `send` to just send and forget or supply `success` and `failure` closure.
 
 ```swift
+// Initialize SlackMessage
 let message = SlackMessage(text: "Foo Bar")
 
 // Send and forget
