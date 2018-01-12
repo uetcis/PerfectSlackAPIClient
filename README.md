@@ -66,7 +66,7 @@ SlackAPIClient.Configuration.webhookURL = "YOUR_WEBHOOK_URL"
 It is recommend to set the Webhook URL in your initialization code just before you start your `PerfectHTTPServer`.
 
 # Usage
-The following example demonstrates how to post a `SlackMessage`.
+The following example demonstrates how to send a `SlackMessage`.
 
 ```swift
 import PerfectAPIClient
