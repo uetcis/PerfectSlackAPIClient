@@ -6,6 +6,7 @@
 //
 
 import ObjectMapper
+import PerfectAPIClient
 
 /// Messages act as delivery vehicle for all interactive message experiences.
 /// Use them not only when initiating messages, but also when updating or creating evolving workflows.
@@ -73,6 +74,19 @@ public struct SlackMessage {
     public init(text: String? = nil, attachments: [SlackAttachment]? = nil) {
         self.text = text
         self.attachments = attachments
+    }
+    
+    /// Convienence function to send the SlackMessage with optional callbacks
+    ///
+    /// - Parameters:
+    ///   - success: The optional success callback
+    ///   - failure: The optional error callback
+    public func send(success: ((APIClientResponse) -> Void)? = nil, failure: ((APIClientError) -> Void)? = nil) {
+        // Send SlackMessage
+        SlackAPIClient.send(self).request { (result: APIClientResult<APIClientResponse>) in
+            // Analysis the result with the given success and failure closure
+            result.analysis(success: success, failure: failure)
+        }
     }
     
 }
