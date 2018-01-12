@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/master/.assets/logo.png" alt="logo">
+	<img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/gh-pages/readMeAssets/logo.png" alt="logo">
 </p>
 <br/>
 <p align="center">
@@ -111,7 +111,7 @@ This example will generate the following url
 [https://api.slack.com/docs/messages/builder?msg=%7B%22text%22:%22Posted%20via%20PerfectSlackAPIClient%22%7D](https://api.slack.com/docs/messages/builder?msg=%7B%22text%22:%22Posted%20via%20PerfectSlackAPIClient%22%7D)
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/master/.assets/message_builder_example.png" alt="Message Builder Example Preview">
+	<img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/gh-pages/readMeAssets/message_builder_example.png" alt="Message Builder Example Preview">
 </p>
 
 # Slack Messages API
