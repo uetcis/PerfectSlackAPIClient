@@ -7,6 +7,9 @@
 		<img src="https://img.shields.io/badge/Swift-4.0-orange.svg" alt="Swift 3.2">
 	</a>
 	<img src="https://img.shields.io/badge/platform-macOS%20%7C%20Linux-yellow.svg" alt="Platform">
+	<a href="https://sventiigi.github.io/PerfectSlackAPIClient" target="_blank">
+		<img src="https://github.com/SvenTiigi/PerfectSlackAPIClient/blob/gh-pages/badge.svg" alt="Docs">
+	</a>
 	<a href="https://twitter.com/SvenTiigi" target="_blank">
 		<img src="https://img.shields.io/badge/contact-@SvenTiigi-blue.svg" alt="@SvenTiigi">
 	</a>
@@ -53,11 +56,11 @@ let package = Package(
 
 # Setup
 In order to send a message to your Slack-Channel, you have to generate a `Webhook URL` for your Slack-Workspace.
-Check out the Slack API [Hello world example](https://api.slack.com/tutorials/slack-apps-hello-world). After you successfully generated a Slack Webhook URL you can configure the `PerfectSlackAPIClient`.
+Check out the Slack API [Hello world example](https://api.slack.com/tutorials/slack-apps-hello-world). After you successfully generated a Slack Webhook URL you can configure the `SlackAPIClient`.
 
 ```swift
 // Configure the Webhook URL
-PerfectSlackAPIClient.Configuration.webhookURL = "YOUR_WEBHOOK_URL"
+SlackAPIClient.Configuration.webhookURL = "YOUR_WEBHOOK_URL"
 ```
 
 It is recommend to set the Webhook URL in your initialization code just before you start your `PerfectHTTPServer`.
@@ -82,7 +85,7 @@ attachment.imageURL = "https://media.giphy.com/media/Um3ljJl8jrnHy/giphy.gif"
 message.attachments = [attachment]
 
 // Send SlackMessage
-PerfectSlackAPIClient.send(message).request { (result: APIClientResult<APIClientResponse>) in
+SlackAPIClient.send(message).request { (result: APIClientResult<APIClientResponse>) in
     result.analysis(success: { (response: APIClientResponse) in
         // Check out your Slack-Channel 😎
         print(response.payload) // "ok"
