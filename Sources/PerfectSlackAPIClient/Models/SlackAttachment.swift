@@ -102,9 +102,50 @@ public extension SlackAttachment {
         case warning
         case danger
         case custom(hexValue: String)
+        
+        /// Color EnumTransformType
+        struct EnumTransformType: TransformType {
+            /// Object Typealias
+            typealias Object = Color
+            /// JSON Typealias
+            typealias JSON = String
+            /// JSON to Enum
+            func transformFromJSON(_ value: Any?) -> SlackAttachment.Color? {
+                guard let value = value as? String else {
+                    return nil
+                }
+                switch value {
+                case "good":
+                    return .good
+                case "warning":
+                    return .warning
+                case "danger":
+                    return .danger
+                default:
+                    return .custom(hexValue: value)
+                }
+            }
+            /// Enum to JSON
+            func transformToJSON(_ value: SlackAttachment.Color?) -> String? {
+                guard let value = value else {
+                    return nil
+                }
+                switch value {
+                case .good:
+                    return "good"
+                case .warning:
+                    return "warning"
+                case .danger:
+                    return "danger"
+                case .custom(hexValue: let hexValue):
+                    return hexValue
+                }
+            }
+        }
     }
     
 }
+
 
 // MARK: Mappable
 
@@ -133,7 +174,7 @@ extension SlackAttachment: Mappable {
         self.authorIconURL <- map["author_icon"]
         self.imageURL <- map["image_url"]
         self.thumbnailURL <- map["thumb_url"]
-        self.color <- map["color"]
+        self.color <- (map["color"], SlackAttachment.Color.EnumTransformType())
         self.actions <- map["actions"]
         self.fields <- map["fields"]
         self.callbackId <- map["callback_id"]
