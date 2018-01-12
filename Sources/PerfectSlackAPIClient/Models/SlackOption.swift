@@ -43,9 +43,9 @@ extension SlackAttachmentActionOption: Mappable {
     
     /// Mapping
     public mutating func mapping(map: Map) {
-        self.text <- map["text"]
-        self.value <- map["value"]
-        self.description <- map["description"]
+        self.text           <- map["text"]
+        self.value          <- map["value"]
+        self.description    <- map["description"]
     }
     
 }

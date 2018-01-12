@@ -166,23 +166,23 @@ extension SlackAttachment: Mappable {
     
     /// Mapping
     public mutating func mapping(map: Map) {
-        self.title <- map["title"]
-        self.titleLinkURL <- map["title_link"]
-        self.preText <- map["pretext"]
-        self.authorName <- map["author_name"]
-        self.authorLinkURL <- map["author_link"]
-        self.authorIconURL <- map["author_icon"]
-        self.imageURL <- map["image_url"]
-        self.thumbnailURL <- map["thumb_url"]
-        self.color <- (map["color"], SlackAttachment.Color.EnumTransformType())
-        self.actions <- map["actions"]
-        self.fields <- map["fields"]
-        self.callbackId <- map["callback_id"]
-        self.fallback <- map["fallback"]
-        self.type <- map["attachment_type"]
-        self.footer <- map["footer"]
-        self.footerIconURL <- map["footer_icon"]
-        self.timestamp <- map["ts"]
+        self.title          <- map["title"]
+        self.titleLinkURL   <- map["title_link"]
+        self.preText        <- map["pretext"]
+        self.authorName     <- map["author_name"]
+        self.authorLinkURL  <- map["author_link"]
+        self.authorIconURL  <- map["author_icon"]
+        self.imageURL       <- map["image_url"]
+        self.thumbnailURL   <- map["thumb_url"]
+        self.color          <- (map["color"], SlackAttachment.Color.EnumTransformType())
+        self.actions        <- map["actions"]
+        self.fields         <- map["fields"]
+        self.callbackId     <- map["callback_id"]
+        self.fallback       <- map["fallback"]
+        self.type           <- map["attachment_type"]
+        self.footer         <- map["footer"]
+        self.footerIconURL  <- map["footer_icon"]
+        self.timestamp      <- map["ts"]
     }
     
 }

@@ -122,17 +122,17 @@ extension SlackAttachmentAction: Mappable {
     
     /// Mapping
     public mutating func mapping(map: Map) {
-        self.name <- map["name"]
-        self.text <- map["text"]
-        self.type <- map["type"]
-        self.value <- map["value"]
-        self.confirm <- map["confirm"]
-        self.style <- map["style"]
-        self.options <- map["options"]
-        self.optionGroups <- map["optionGroups"]
-        self.dataSource <- map["dataSource"]
-        self.selectedOptions <- map["selectedOptions"]
-        self.minQueryLength <- map["minQueryLength"]
+        self.name               <- map["name"]
+        self.text               <- map["text"]
+        self.type               <- map["type"]
+        self.value              <- map["value"]
+        self.confirm            <- map["confirm"]
+        self.style              <- map["style"]
+        self.options            <- map["options"]
+        self.optionGroups       <- map["optionGroups"]
+        self.dataSource         <- map["dataSource"]
+        self.selectedOptions    <- map["selectedOptions"]
+        self.minQueryLength     <- map["minQueryLength"]
     }
    
 }

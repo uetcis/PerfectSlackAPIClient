@@ -41,10 +41,10 @@ extension SlackActionConfirmation: Mappable {
     
     /// Mapping
     public mutating func mapping(map: Map) {
-        self.title <- map["title"]
-        self.text <- map["text"]
-        self.okText <- map["ok_text"]
-        self.dismissText <- map["dismiss_text"]
+        self.title          <- map["title"]
+        self.text           <- map["text"]
+        self.okText         <- map["ok_text"]
+        self.dismissText    <- map["dismiss_text"]
     }
     
 }

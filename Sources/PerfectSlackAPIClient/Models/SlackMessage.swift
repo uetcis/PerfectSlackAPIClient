@@ -74,13 +74,13 @@ extension SlackMessage: Mappable {
     
     /// Mapping
     public mutating func mapping(map: Map) {
-        self.text <- map["text"]
-        self.attachments <- map["attachments"]
-        self.threadTimestamp <- map["thread_ts"]
-        self.responseType <- map["response_type"]
-        self.replaceOriginal <- map["replace_original"]
-        self.deleteOriginal <- map["delete_original"]
-        self.markdownEnabled <- map["mrkdwn"]
+        self.text               <- map["text"]
+        self.attachments        <- map["attachments"]
+        self.threadTimestamp    <- map["thread_ts"]
+        self.responseType       <- map["response_type"]
+        self.replaceOriginal    <- map["replace_original"]
+        self.deleteOriginal     <- map["delete_original"]
+        self.markdownEnabled    <- map["mrkdwn"]
     }
     
 }
