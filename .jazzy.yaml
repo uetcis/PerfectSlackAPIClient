@@ -1,0 +1,11 @@
+# PerfectSlackAPIClient document generator jazzy settings
+
+copyright: Copyright 2018 Sven Tiigi
+author: Sven Tiigi
+module: PerfectSlackAPIClient
+github_url: https://github.com/SvenTiigi/PerfectSlackAPIClient
+xcodebuild_arguments: [-target, PerfectSlackAPIClient]
+module: PerfectSlackAPIClient
+clean: true
+output: ./Documentation
+min_acl: private
