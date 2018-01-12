@@ -100,6 +100,7 @@ public extension SlackAttachment {
     
     /// The SlackAttachment Type
     enum AttachmentType: String {
+        /// Default
         case `default`
     }
     

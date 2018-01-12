@@ -18,7 +18,7 @@ public struct SlackMessage {
     
     /// Provide a JSON array of attachment objects.
     /// Adds additional components to the message.
-    // Messages should contain no more than 20 attachments.
+    /// Messages should contain no more than 20 attachments.
     public var attachments: [SlackAttachment]?
     
     /// When replying to a parent message, this value is the ts value
