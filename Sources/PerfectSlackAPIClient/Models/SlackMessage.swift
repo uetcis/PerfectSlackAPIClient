@@ -44,6 +44,7 @@ public struct SlackMessage {
     /// it will be posted as a brand new message.
     var deleteOriginal: Bool?
     
+    /// Flag if markdown should be enabled or not
     var markdownEnabled: Bool?
     
 }
@@ -68,8 +69,10 @@ public extension SlackMessage {
 
 extension SlackMessage: Mappable {
     
+    /// ObjectMapper initializer
     public init?(map: Map) {}
     
+    /// Mapping
     public mutating func mapping(map: Map) {
         self.text <- map["text"]
         self.attachments <- map["attachments"]

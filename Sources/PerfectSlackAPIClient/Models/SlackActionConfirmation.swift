@@ -30,6 +30,7 @@ public struct SlackActionConfirmation {
 
 extension SlackActionConfirmation: Mappable {
     
+    /// ObjectMapper initializer
     public init?(map: Map) {
         let json = map.JSON
         guard let text = json["text"] as? String else {
@@ -38,6 +39,7 @@ extension SlackActionConfirmation: Mappable {
         self.text = text
     }
     
+    /// Mapping
     public mutating func mapping(map: Map) {
         self.title <- map["title"]
         self.text <- map["text"]

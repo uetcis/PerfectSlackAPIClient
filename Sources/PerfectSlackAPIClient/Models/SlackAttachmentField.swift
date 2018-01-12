@@ -28,8 +28,10 @@ public struct SlackAttachmentField {
 
 extension SlackAttachmentField: Mappable {
     
+    /// ObjectMapper initializer
     public init?(map: Map) {}
     
+    /// Mapping
     public mutating func mapping(map: Map) {
         self.title <- map["title"]
         self.value <- map["value"]

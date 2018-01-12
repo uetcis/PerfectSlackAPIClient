@@ -103,6 +103,7 @@ public extension SlackAttachmentAction {
 
 extension SlackAttachmentAction: Mappable {
     
+    /// ObjectMapper initializer
     public init?(map: Map) {
         let json = map.JSON
         guard let name = json["name"] as? String,
@@ -116,6 +117,7 @@ extension SlackAttachmentAction: Mappable {
         self.type = type
     }
     
+    /// Mapping
     public mutating func mapping(map: Map) {
         self.name <- map["name"]
         self.text <- map["text"]

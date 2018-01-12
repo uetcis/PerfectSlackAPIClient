@@ -110,6 +110,7 @@ public extension SlackAttachment {
 
 extension SlackAttachment: Mappable {
     
+    /// ObjectMapper initializer
     public init?(map: Map) {
         let json = map.JSON
         guard let callbackId = json["callbackId"] as? String,
@@ -122,6 +123,7 @@ extension SlackAttachment: Mappable {
         self.actions = actions
     }
     
+    /// Mapping
     public mutating func mapping(map: Map) {
         self.title <- map["title"]
         self.titleLinkURL <- map["title_link"]
