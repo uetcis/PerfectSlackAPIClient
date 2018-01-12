@@ -1,3 +1,3 @@
-# PerfectSlackAPIClient
-
-A description of this package.
+<p align="center">
+	<img src="./.assets/logo.png">
+</p>
