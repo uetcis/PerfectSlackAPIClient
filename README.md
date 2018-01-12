@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="./.assets/logo.png">
+	<img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/master/.assets/logo.png" alt="logo">
 </p>
 
 <p align="center">
