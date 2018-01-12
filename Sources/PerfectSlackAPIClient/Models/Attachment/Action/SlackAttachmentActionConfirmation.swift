@@ -16,17 +16,17 @@ public extension SlackAttachment.Action {
     struct Confirmation {
         
         /// Title the pop up window. Please be brief.
-        var title: String?
+        public var title: String?
         
         /// Describe in detail the consequences of the action and contextualize your button text choices.
         /// Use a maximum of 30 characters or so for best results across form factors.
-        var text: String
+        public var text: String
         
         /// The text label for the button to continue with an action. Keep it short. Defaults to Okay.
-        var okText: String?
+        public var okText: String?
         
         /// The text label for the button to cancel the action. Keep it short. Defaults to Cancel.
-        var dismissText: String?
+        public var dismissText: String?
         
     }
     

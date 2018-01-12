@@ -16,15 +16,15 @@ public extension SlackAttachment {
         
         /// Shown as a bold heading above the value text.
         /// It cannot contain markup and will be escaped for you.
-        var title: String?
+        public var title: String?
         
         /// The text value of the field. It may contain standard message markup
         /// and must be escaped as normal. May be multi-line.
-        var value: String?
+        public var value: String?
         
         /// An optional flag indicating whether the value is short enough
         /// to be displayed side-by-side with other values.
-        var short: Bool?
+        public var short: Bool?
         
     }
     

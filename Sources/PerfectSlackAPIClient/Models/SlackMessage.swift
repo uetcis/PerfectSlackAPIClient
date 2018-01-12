@@ -13,16 +13,16 @@ public struct SlackMessage {
     
     /// The basic text of the message.
     /// Only required if the message contains zero attachments.
-    var text: String?
+    public var text: String?
     
     /// Provide a JSON array of attachment objects.
     /// Adds additional components to the message.
     // Messages should contain no more than 20 attachments.
-    var attachments: [SlackAttachment]?
+    public var attachments: [SlackAttachment]?
     
     /// When replying to a parent message, this value is the ts value
     /// of the parent message to the thread. See message threading for more context.
-    var threadTimestamp: String?
+    public var threadTimestamp: String?
     
     /// Expects one of two values:
     /// in_channel — display the message to all users in the channel where a message button was clicked.
@@ -32,24 +32,24 @@ public struct SlackMessage {
     /// This field cannot be specified for a brand new message and must be used only in response
     /// to the execution of message button action or a slash command response.
     /// Once a response_type is set, it cannot be changed when updating the message.
-    var responseType: ResponseType?
+    public var responseType: ResponseType?
     
     /// Used only when creating messages in response to a button action invocation.
     /// When set to true, the inciting message will be replaced by this message you're providing.
     /// When false, the message you're providing is considered a brand new message.
-    var replaceOriginal: Bool?
+    public var replaceOriginal: Bool?
     
     /// Used only when creating messages in response to a button action invocation.
     /// When set to true, the inciting message will be deleted and if a message is provided,
     /// it will be posted as a brand new message.
-    var deleteOriginal: Bool?
+    public var deleteOriginal: Bool?
     
     /// Flag if markdown should be enabled or not
-    var markdownEnabled: Bool?
+    public var markdownEnabled: Bool?
     
     /// The Slack Message Builder Preview URL (Read-Only) in order
     /// to get a brief look of how your message will be displayed
-    var messageBuilderPreviewURL: String {
+    public var messageBuilderPreviewURL: String {
         get {
             // Unrwap url encoded JSON string
             guard let json = self.toJSONString()?
@@ -70,7 +70,7 @@ public struct SlackMessage {
     /// - Parameters:
     ///   - text: The SlackMessage Text
     ///   - attachments: The SlackAttachments
-    init(text: String? = nil, attachments: [SlackAttachment]? = nil) {
+    public init(text: String? = nil, attachments: [SlackAttachment]? = nil) {
         self.text = text
         self.attachments = attachments
     }

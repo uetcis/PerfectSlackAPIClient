@@ -10,7 +10,7 @@ import Foundation
 public extension String {
     
     /// String MarkdownFormat Enumeration
-    public enum MarkdownFormat {
+    enum MarkdownFormat {
         /// ```pre```
         case pre
         /// `code`

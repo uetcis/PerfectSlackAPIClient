@@ -23,11 +23,11 @@ public extension PerfectSlackAPIClient {
     /// The PerfectSlackAPIClient Configurations
     struct Configuration {
         /// The Slack Webhook URL. Default value: String()
-        static var webhookURL = String()
+        public static var webhookURL = String()
         /// Logging Configuration. Default value: false
-        static var logging = false
+        public static var logging = false
         /// The Slack Message Builder URL
-        static var messageBuilderURL = "https://api.slack.com/docs/messages/builder?msg="
+        public static var messageBuilderURL = "https://api.slack.com/docs/messages/builder?msg="
     }
     
 }
