@@ -66,6 +66,9 @@ It is recommend to set the Webhook URL in your initialization code just before y
 The following example demonstrates how to post a `SlackMessage`.
 
 ```swift
+import PerfectAPIClient
+import PerfectSlackAPIClient
+
 // Initialize SlackMessage
 var message = SlackMessage()
 message.text = "Hello Developer".toMarkdown(format: .code)
