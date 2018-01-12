@@ -85,7 +85,7 @@ PerfectSlackAPIClient.send(message).request { (result: APIClientResult<APIClient
     }, failure: { (error: APIClientError) in
         // SlackMessage could not be sent 😱
         // Perform error.analysis(....) to get more information
-    }
+    })
 }
 ```
 
