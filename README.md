@@ -53,7 +53,7 @@ let package = Package(
 
 # Setup
 In order to send a message to your Slack-Channel, you have to generate a `Webhook URL` for your Slack-Workspace.
-Checkout the Slack API [Hello world example](https://api.slack.com/tutorials/slack-apps-hello-world). After you successfully generated a Slack Webhook URL you can configure the `PerfectSlackAPIClient`.
+Check out the Slack API [Hello world example](https://api.slack.com/tutorials/slack-apps-hello-world). After you successfully generated a Slack Webhook URL you can configure the `PerfectSlackAPIClient`.
 
 ```swift
 // Configure the Webhook URL
@@ -81,6 +81,7 @@ attachment.imageURL = "https://media.giphy.com/media/Um3ljJl8jrnHy/giphy.gif"
 // Add the attachment to the message
 message.attachments = [attachment]
 
+// Send SlackMessage
 PerfectSlackAPIClient.send(message).request { (result: APIClientResult<APIClientResponse>) in
     result.analysis(success: { (response: APIClientResponse) in
         // Check out your Slack-Channel 😎
@@ -135,7 +136,7 @@ Contributions are very welcome 🙌 🤓
 ```
 MIT License
 
-Copyright (c) 2017 Sven Tiigi
+Copyright (c) 2018 Sven Tiigi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
