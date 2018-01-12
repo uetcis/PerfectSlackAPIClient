@@ -31,10 +31,10 @@
             <a href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Enums/PerfectSlackAPIClient.html">PerfectSlackAPIClient</a>
+                <a href="Enums/SlackAPIClient.html">SlackAPIClient</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/PerfectSlackAPIClient/Configuration.html">– Configuration</a>
+                <a href="Enums/SlackAPIClient/Configuration.html">– Configuration</a>
               </li>
             </ul>
           </li>
@@ -82,7 +82,7 @@
           <section class="section">
             
             <p align="center">
-    <img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/master/.assets/logo.png" alt="logo">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/gh-pages/readMeAssets/logo.png" alt="logo">
 </p>
 
 <p><br/></p>
@@ -135,7 +135,7 @@
 <h1 id='setup' class='heading'>Setup</h1>
 
 <p>In order to send a message to your Slack-Channel, you have to generate a <code>Webhook URL</code> for your Slack-Workspace.
-Checkout the Slack API <a href="https://api.slack.com/tutorials/slack-apps-hello-world">Hello world example</a>. After you successfully generated a Slack Webhook URL you can configure the <code><a href="Enums/PerfectSlackAPIClient.html">PerfectSlackAPIClient</a></code>.</p>
+Check out the Slack API <a href="https://api.slack.com/tutorials/slack-apps-hello-world">Hello world example</a>. After you successfully generated a Slack Webhook URL you can configure the <code>PerfectSlackAPIClient</code>.</p>
 <pre class="highlight swift"><code><span class="c1">// Configure the Webhook URL</span>
 <span class="kt">PerfectSlackAPIClient</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="n">webhookURL</span> <span class="o">=</span> <span class="s">"YOUR_WEBHOOK_URL"</span>
 </code></pre>
@@ -159,6 +159,7 @@ Checkout the Slack API <a href="https://api.slack.com/tutorials/slack-apps-hello
 <span class="c1">// Add the attachment to the message</span>
 <span class="n">message</span><span class="o">.</span><span class="n">attachments</span> <span class="o">=</span> <span class="p">[</span><span class="n">attachment</span><span class="p">]</span>
 
+<span class="c1">// Send SlackMessage</span>
 <span class="kt">PerfectSlackAPIClient</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="nf">request</span> <span class="p">{</span> <span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">APIClientResult</span><span class="o">&lt;</span><span class="kt">APIClientResponse</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
     <span class="n">result</span><span class="o">.</span><span class="nf">analysis</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">response</span><span class="p">:</span> <span class="kt">APIClientResponse</span><span class="p">)</span> <span class="k">in</span>
  <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="c1">// Check out your Slack-Channel 😎</span>
@@ -186,7 +187,7 @@ Checkout the Slack API <a href="https://api.slack.com/tutorials/slack-apps-hello
 <p><a href="https://api.slack.com/docs/messages/builder?msg=%7B%22text%22:%22Posted%20via%20PerfectSlackAPIClient%22%7D">https://api.slack.com/docs/messages/builder?msg=%7B%22text%22:%22Posted%20via%20PerfectSlackAPIClient%22%7D</a></p>
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/master/.assets/message_builder_example.png" alt="Message Builder Example Preview">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/gh-pages/readMeAssets/message_builder_example.png" alt="Message Builder Example Preview">
 </p>
 <h1 id='slack-messages-api' class='heading'>Slack Messages API</h1>
 
@@ -212,7 +213,7 @@ Checkout the Slack API <a href="https://api.slack.com/tutorials/slack-apps-hello
 <h1 id='license' class='heading'>License</h1>
 <pre class="highlight plaintext"><code>MIT License
 
-Copyright (c) 2017 Sven Tiigi
+Copyright (c) 2018 Sven Tiigi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
