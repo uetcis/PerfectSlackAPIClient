@@ -109,3 +109,6 @@ This example will generate the following url
 <p align="center">
 	<img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/master/.assets/message_builder_example.png" alt="Message Builder Example Preview">
 </p>
+
+# Slack Messages API
+All properties are fully documented with the Slack Messages API definition. The complete documentation can be found at [https://api.slack.com/docs/messages](https://api.slack.com/docs/messages).
