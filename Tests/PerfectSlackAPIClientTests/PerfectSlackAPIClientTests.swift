@@ -10,7 +10,7 @@ class PerfectSlackAPIClientTests: XCTestCase {
     override func setUp() {
         super.setUp()
         self.continueAfterFailure = false
-        PerfectSlackAPIClient.Configuration.webhookURL = "https://hooks.slack.com/services/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"
+        PerfectSlackAPIClient.Configuration.webhookURL = "THE_WEBHOOK_URL"
     }
     
     func testSend() {
