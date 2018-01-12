@@ -18,7 +18,7 @@ class PerfectSlackAPIClientTests: XCTestCase {
         var slackMessage = SlackMessage()
         slackMessage.text = "Hello World :)".toMarkdown(format: .code)
         let expectation = self.expectation(description: #function)
-        PerfectSlackAPIClient.send(message: slackMessage).request { (result) in
+        PerfectSlackAPIClient.send(slackMessage).request { (result) in
             result.analysis(success: { (response: APIClientResponse) in
                 XCTAssertNotNil(response.payload)
                 expectation.fulfill()
