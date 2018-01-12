@@ -77,17 +77,20 @@ public struct SlackAttachmentAction {
 
 public extension SlackAttachmentAction {
     
+    /// SlackAttachmentAction.ActionType
     enum ActionType: String {
         case button
         case select
     }
     
+    /// SlackAttachmentAction.Style
     enum Style: String {
         case `default`
         case primary
         case danger
     }
     
+    /// SlackAttachmentAction.DataSource
     enum DataSource: String {
         case `default`
         case `static`
