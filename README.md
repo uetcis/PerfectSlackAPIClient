@@ -81,7 +81,7 @@ message.attachments = [attachment]
 PerfectSlackAPIClient.send(message).request { (result: APIClientResult<APIClientResponse>) in
     result.analysis(success: { (response: APIClientResponse) in
         // Check out your Slack-Channel 😎
-        print(response.payload)
+        print(response.payload) // "ok"
     }, failure: { (error: APIClientError) in
         // SlackMessage could not be sent 😱
         // Perform error.analysis(....) to get more information
