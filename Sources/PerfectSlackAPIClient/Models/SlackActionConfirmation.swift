@@ -41,10 +41,19 @@ extension SlackActionConfirmation: Mappable {
     
     /// Mapping
     public mutating func mapping(map: Map) {
+        self.escapeStringValues()
         self.title          <- map["title"]
         self.text           <- map["text"]
         self.okText         <- map["ok_text"]
         self.dismissText    <- map["dismiss_text"]
+    }
+    
+    /// Escape Strings before mapping
+    private mutating func escapeStringValues() {
+        self.title?.escapeSlackCharacters()
+        self.text.escapeSlackCharacters()
+        self.okText?.escapeSlackCharacters()
+        self.dismissText?.escapeSlackCharacters()
     }
     
 }

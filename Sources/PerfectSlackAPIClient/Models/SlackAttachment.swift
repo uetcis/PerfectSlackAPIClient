@@ -57,7 +57,7 @@ public struct SlackAttachment {
     
     /// A collection of actions (buttons or menus) to include in the attachment.
     /// Required when using message buttons or message menus. A maximum of 5 actions per attachment may be provided.
-    var actions: [SlackAttachmentAction]
+    var actions: [SlackAttachmentAction]?
     
     /// Fields will be displayed in a table inside the message attachment.
     var fields: [SlackAttachmentField]?
@@ -66,15 +66,15 @@ public struct SlackAttachment {
     /// It will be sent back to your message button action URL with each invoked action.
     /// This field is required when the attachment contains message buttons.
     /// It is key to identifying the interaction you're working with.
-    var callbackId: String
+    var callbackId: String?
     
     /// A plaintext message displayed to users using an interface that does not support attachments or interactive messages.
     /// Consider leaving a URL pointing to your service if the potential message actions are representable outside of Slack.
     /// Otherwise, let folks know what they are missing.
-    var fallback: String
+    var fallback: String?
     
     /// Even for message menus, remains the default value default.
-    var type: String?
+    var type: AttachmentType?
     
     /// Add some brief text to help contextualize and identify an attachment.
     /// Limited to 300 characters, and may be truncated further when displayed to users
@@ -95,8 +95,12 @@ public struct SlackAttachment {
 
 public extension SlackAttachment {
     
+    /// The SlackAttachment Type
+    enum AttachmentType: String {
+        case `default`
+    }
+    
     /// Used to visually distinguish an attachment from other messages.
-    // TODO: Custom RawRepresentable (mixed enumeration)
     enum Color {
         case good
         case warning
@@ -152,23 +156,15 @@ public extension SlackAttachment {
 extension SlackAttachment: Mappable {
     
     /// ObjectMapper initializer
-    public init?(map: Map) {
-        let json = map.JSON
-        guard let callbackId = json["callbackId"] as? String,
-            let fallback = json["fallback"] as? String,
-            let actions = json["actions"] as? [SlackAttachmentAction] else {
-            return nil
-        }
-        self.callbackId = callbackId
-        self.fallback = fallback
-        self.actions = actions
-    }
+    public init?(map: Map) {}
     
     /// Mapping
     public mutating func mapping(map: Map) {
+        self.escapeStringValues()
         self.title          <- map["title"]
         self.titleLinkURL   <- map["title_link"]
         self.preText        <- map["pretext"]
+        self.text           <- map["text"]
         self.authorName     <- map["author_name"]
         self.authorLinkURL  <- map["author_link"]
         self.authorIconURL  <- map["author_icon"]
@@ -183,6 +179,14 @@ extension SlackAttachment: Mappable {
         self.footer         <- map["footer"]
         self.footerIconURL  <- map["footer_icon"]
         self.timestamp      <- map["ts"]
+    }
+    
+    /// Escape Strings before mapping
+    private mutating func escapeStringValues() {
+        self.title?.escapeSlackCharacters()
+        self.preText?.escapeSlackCharacters()
+        self.text?.escapeSlackCharacters()
+        self.authorName?.escapeSlackCharacters()
     }
     
 }

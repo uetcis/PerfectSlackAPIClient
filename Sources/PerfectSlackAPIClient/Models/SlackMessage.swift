@@ -74,6 +74,7 @@ extension SlackMessage: Mappable {
     
     /// Mapping
     public mutating func mapping(map: Map) {
+        self.escapeStringValues()
         self.text               <- map["text"]
         self.attachments        <- map["attachments"]
         self.threadTimestamp    <- map["thread_ts"]
@@ -81,6 +82,11 @@ extension SlackMessage: Mappable {
         self.replaceOriginal    <- map["replace_original"]
         self.deleteOriginal     <- map["delete_original"]
         self.markdownEnabled    <- map["mrkdwn"]
+    }
+    
+    /// Escape Strings before mapping
+    private mutating func escapeStringValues() {
+        self.text?.escapeSlackCharacters()
     }
     
 }

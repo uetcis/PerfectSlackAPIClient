@@ -33,9 +33,16 @@ extension SlackAttachmentField: Mappable {
     
     /// Mapping
     public mutating func mapping(map: Map) {
+        self.escapeStringValues()
         self.title <- map["title"]
         self.value <- map["value"]
         self.short <- map["short"]
+    }
+    
+    /// Escape Strings before mapping
+    private mutating func escapeStringValues() {
+        self.title?.escapeSlackCharacters()
+        self.value?.escapeSlackCharacters()
     }
     
 }

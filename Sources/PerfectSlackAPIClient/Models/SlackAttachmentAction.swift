@@ -122,6 +122,7 @@ extension SlackAttachmentAction: Mappable {
     
     /// Mapping
     public mutating func mapping(map: Map) {
+        self.escapeStringValues()
         self.name               <- map["name"]
         self.text               <- map["text"]
         self.type               <- map["type"]
@@ -133,6 +134,13 @@ extension SlackAttachmentAction: Mappable {
         self.dataSource         <- map["dataSource"]
         self.selectedOptions    <- map["selectedOptions"]
         self.minQueryLength     <- map["minQueryLength"]
+    }
+    
+    /// Escape Strings before mapping
+    private mutating func escapeStringValues() {
+        self.name.escapeSlackCharacters()
+        self.text.escapeSlackCharacters()
+        self.value?.escapeSlackCharacters()
     }
    
 }

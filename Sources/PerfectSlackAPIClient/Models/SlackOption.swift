@@ -43,9 +43,17 @@ extension SlackAttachmentActionOption: Mappable {
     
     /// Mapping
     public mutating func mapping(map: Map) {
+        self.escapeStringValues()
         self.text           <- map["text"]
         self.value          <- map["value"]
         self.description    <- map["description"]
+    }
+    
+    /// Escape Strings before mapping
+    private mutating func escapeStringValues() {
+        self.text.escapeSlackCharacters()
+        self.value.escapeSlackCharacters()
+        self.description.escapeSlackCharacters()
     }
     
 }
