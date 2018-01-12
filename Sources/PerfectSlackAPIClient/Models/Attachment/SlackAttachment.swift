@@ -57,10 +57,10 @@ public struct SlackAttachment {
     
     /// A collection of actions (buttons or menus) to include in the attachment.
     /// Required when using message buttons or message menus. A maximum of 5 actions per attachment may be provided.
-    var actions: [SlackAttachmentAction]?
+    var actions: [Action]?
     
     /// Fields will be displayed in a table inside the message attachment.
-    var fields: [SlackAttachmentField]?
+    var fields: [Field]?
     
     /// The provided string will act as a unique identifier for the collection of buttons within the attachment.
     /// It will be sent back to your message button action URL with each invoked action.

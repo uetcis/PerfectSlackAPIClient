@@ -7,26 +7,32 @@
 
 import ObjectMapper
 
-/// An option field. Used in static and external message menu data types.
-public struct SlackAttachmentActionOption {
+// MARK: SlackAttachment.Action Extension
+
+public extension SlackAttachment.Action {
     
-    /// A short, user-facing string to label this option to users.
-    /// Use a maximum of 30 characters or so for best results across, you guessed it, form factors.
-    var text: String
-    
-    /// A short string that identifies this particular option to your application.
-    /// It will be sent to your Action URL when this option is selected.
-    /// While there's no limit to the value of your Slack app, this value may contain up to only 2000 characters.
-    var value: String
-    
-    /// A user-facing string that provides more details about this option. Also should contain up to 30 characters.
-    var description: String
+    /// An option field. Used in static and external message menu data types.
+    struct Option {
+        
+        /// A short, user-facing string to label this option to users.
+        /// Use a maximum of 30 characters or so for best results across, you guessed it, form factors.
+        var text: String
+        
+        /// A short string that identifies this particular option to your application.
+        /// It will be sent to your Action URL when this option is selected.
+        /// While there's no limit to the value of your Slack app, this value may contain up to only 2000 characters.
+        var value: String
+        
+        /// A user-facing string that provides more details about this option. Also should contain up to 30 characters.
+        var description: String
+        
+    }
     
 }
 
 // MARK: Mappable
 
-extension SlackAttachmentActionOption: Mappable {
+extension SlackAttachment.Action.Option: Mappable {
     
     /// ObjectMapper initializer
     public init?(map: Map) {
