@@ -57,7 +57,7 @@ public struct SlackMessage {
                     return "Unable to url encode the SlackMessage JSON"
             }
             // Initialize Slack Message Builder URL with encoded JSON string
-            let messageBuilderURL = PerfectSlackAPIClient.Configuration.messageBuilderURL + json
+            let messageBuilderURL = SlackAPIClient.Configuration.messageBuilderURL + json
             // Setup SlackMessageBuilder explanation
             let slackMessageBuilderExplanation = "\nSlack Message Builder URL:\n\n\(messageBuilderURL)\n"
             // Return slackMessageBuilderExplanation

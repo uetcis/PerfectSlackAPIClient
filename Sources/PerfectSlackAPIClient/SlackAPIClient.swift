@@ -1,5 +1,5 @@
 //
-//  PerfectSlackAPIClient.swift
+//  SlackAPIClient.swift
 //  PerfectSlackAPIClient
 //
 //  Created by Sven Tiigi on 11.01.18.
@@ -10,15 +10,15 @@ import PerfectHTTP
 import PerfectCURL
 import ObjectMapper
 
-/// Slack API Client
-public enum PerfectSlackAPIClient {
+/// The Slack API Client
+public enum SlackAPIClient {
     /// Send a SlackMessage
     case send(SlackMessage)
 }
 
-// MARK: Configuration
+// MARK: Configuration Extension
 
-public extension PerfectSlackAPIClient {
+public extension SlackAPIClient {
     
     /// The PerfectSlackAPIClient Configurations
     struct Configuration {
@@ -32,18 +32,18 @@ public extension PerfectSlackAPIClient {
     
 }
 
-// MARK: APIClient
+// MARK: APIClient Extension
 
-extension PerfectSlackAPIClient: APIClient {
+extension SlackAPIClient: APIClient {
     
     /// The base url
     public var baseURL: String {
         switch self {
         case .send:
-            if (PerfectSlackAPIClient.Configuration.webhookURL.isEmpty) {
+            if (SlackAPIClient.Configuration.webhookURL.isEmpty) {
                 print("[PerfectSlackAPIClient Warning]: No webhook url specified. Please set a webhook url")
             }
-            return PerfectSlackAPIClient.Configuration.webhookURL
+            return SlackAPIClient.Configuration.webhookURL
         }
     }
     
@@ -98,7 +98,7 @@ extension PerfectSlackAPIClient: APIClient {
     ///   - request: The APIClientRequest
     public func willPerformRequest(request: APIClientRequest) {
         // Check if logging is enabled
-        if (PerfectSlackAPIClient.Configuration.logging) {
+        if (SlackAPIClient.Configuration.logging) {
             print("PerfectSlackAPIClient will perform request: \(request)")
         }
     }
@@ -110,7 +110,7 @@ extension PerfectSlackAPIClient: APIClient {
     ///   - result: The APIClientResult
     public func didRetrieveResponse(request: APIClientRequest, result: APIClientResult<APIClientResponse>) {
         // Check if logging is enabled
-        if (PerfectSlackAPIClient.Configuration.logging) {
+        if (SlackAPIClient.Configuration.logging) {
             print("PerfectSlackAPIClient did retrieve response with result: \(result) for request: \(request)")
         }
     }
