@@ -52,9 +52,27 @@ public struct SlackMessage {
     /// - Parameters:
     ///   - text: The SlackMessage Text
     ///   - attachments: The SlackAttachments
-    public init(text: String? = nil, attachments: [SlackAttachment]? = nil) {
+    init(text: String? = nil, attachments: [SlackAttachment]? = nil) {
         self.text = text
         self.attachments = attachments
+    }
+    
+    /// Retrieve a Slack Message Builder Preview URL in order
+    /// to get a brief look of how your message will be displayed
+    ///
+    /// - Returns: The Slack Message Builder url if SlackMessage can be serialized and encoded
+    func getSlackMessageBuilderPreviewURL() -> String {
+        // Unrwap url encoded JSON string
+        guard let json = self.toJSONString()?
+            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            return "Unable to url encode the SlackMessage JSON"
+        }
+        // Initialize Slack Message Builder URL with encoded JSON string
+        let messageBuilderURL = PerfectSlackAPIClient.Configuration.messageBuilderURL + json
+        // Setup SlackMessageBuilder explanation
+        let slackMessageBuilderExplanation = "\nSlack Message Builder URL:\n\n\(messageBuilderURL)\n\nThere you go 🙌\n"
+        // Return slackMessageBuilderExplanation
+        return slackMessageBuilderExplanation
     }
     
 }
