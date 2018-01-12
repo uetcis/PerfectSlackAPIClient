@@ -4,8 +4,9 @@ import PerfectAPIClient
 
 class PerfectSlackAPIClientTests: XCTestCase {
     
-    
-    //static var allTests = []
+    static var allTests = [
+        ("testSendSlackMessage", testSendSlackMessage)
+    ]
     
     override func setUp() {
         super.setUp()
@@ -13,7 +14,7 @@ class PerfectSlackAPIClientTests: XCTestCase {
         PerfectSlackAPIClient.Configuration.webhookURL = "THE_WEBHOOK_URL"
     }
     
-    func testSend() {
+    func testSendSlackMessage() {
         var slackMessage = SlackMessage()
         slackMessage.text = "Hello World :)".toMarkdown(format: .code)
         let expectation = self.expectation(description: #function)
@@ -27,6 +28,5 @@ class PerfectSlackAPIClientTests: XCTestCase {
         }
         self.wait(for: [expectation], timeout: 15)
     }
-
 
 }
