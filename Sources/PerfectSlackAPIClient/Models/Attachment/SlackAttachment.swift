@@ -105,9 +105,13 @@ public extension SlackAttachment {
     
     /// Used to visually distinguish an attachment from other messages.
     enum Color {
+        /// Good (green)
         case good
+        /// Warning (yellow)
         case warning
+        /// Danger (red)
         case danger
+        /// Custom Hex-Value. Example: #009688
         case custom(hexValue: String)
         
         /// Color EnumTransformType
@@ -118,9 +122,12 @@ public extension SlackAttachment {
             typealias JSON = String
             /// JSON to Enum
             func transformFromJSON(_ value: Any?) -> SlackAttachment.Color? {
+                // Unwrap optional value as string
                 guard let value = value as? String else {
+                    // Unwrapping failed return nil
                     return nil
                 }
+                /// Switch on value
                 switch value {
                 case "good":
                     return .good
@@ -134,9 +141,12 @@ public extension SlackAttachment {
             }
             /// Enum to JSON
             func transformToJSON(_ value: SlackAttachment.Color?) -> String? {
+                // Unwrap value
                 guard let value = value else {
+                    // Unwrapping failed return nil
                     return nil
                 }
+                // Switch on value
                 switch value {
                 case .good:
                     return "good"

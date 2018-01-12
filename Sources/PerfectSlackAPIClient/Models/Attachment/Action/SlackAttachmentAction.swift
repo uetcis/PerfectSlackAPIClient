@@ -97,24 +97,35 @@ public extension SlackAttachment.Action {
     
     /// SlackAttachmentAction.ActionType
     enum ActionType: String {
+        /// Button
         case button
+        /// Selection
         case select
     }
     
     /// SlackAttachmentAction.Style
     enum Style: String {
+        /// Default
         case `default`
+        /// Primary Style
         case primary
+        /// Danger (Red)
         case danger
     }
     
     /// SlackAttachmentAction.DataSource
     enum DataSource: String {
+        /// Default
         case `default`
+        /// Static
         case `static`
+        /// Users
         case users
+        /// Channels
         case channels
+        /// Conversation
         case conversation
+        /// External
         case external
     }
     
