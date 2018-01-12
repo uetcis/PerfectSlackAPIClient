@@ -81,6 +81,7 @@ attachment.imageURL = "https://media.giphy.com/media/Um3ljJl8jrnHy/giphy.gif"
 // Add the attachment to the message
 message.attachments = [attachment]
 
+// Send SlackMessage
 PerfectSlackAPIClient.send(message).request { (result: APIClientResult<APIClientResponse>) in
     result.analysis(success: { (response: APIClientResponse) in
         // Check out your Slack-Channel 😎
