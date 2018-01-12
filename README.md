@@ -12,7 +12,7 @@
 	</a>
 </p>
 
-PerfectSlackAPIClient is an API Client to access the Slack API from your [Perfect Server Side Swift](https://github.com/PerfectlySoft/Perfect) application. It is build on top of [PerfectAPIClient](https://github.com/SvenTiigi/PerfectAPIClient).
+PerfectSlackAPIClient is an API Client to access the Slack API from your [Perfect Server Side Swift](https://github.com/PerfectlySoft/Perfect) application. It is build on top of [PerfectAPIClient](https://github.com/SvenTiigi/PerfectAPIClient), a network abstraction layer to perform network requests from your Perfect Server Side Swift application
 
 # Installation
 To integrate using Apple's [Swift Package Manager](https://swift.org/package-manager/), add the following as a dependency to your `Package.swift`:
@@ -80,8 +80,8 @@ message.attachments = [attachment]
 
 PerfectSlackAPIClient.send(message).request { (result: APIClientResult<APIClientResponse>) in
     result.analysis(success: { (response: APIClientResponse) in
-        // SlackMessage has been posted
-        print(response.payload)
+        // Check out your Slack-Channel 😎
+        print(response.payload)
     }, failure: { (error: APIClientError) in
         // SlackMessage could not be sent 😱
         // Perform error.analysis(....) to get more information
@@ -109,3 +109,45 @@ This example will generate the following url
 <p align="center">
 	<img src="https://raw.githubusercontent.com/SvenTiigi/PerfectSlackAPIClient/master/.assets/message_builder_example.png" alt="Message Builder Example Preview">
 </p>
+
+# Slack Messages API
+All properties are fully documented with the Slack Messages API definition. The complete documentation can be found at [https://api.slack.com/docs/messages](https://api.slack.com/docs/messages).
+
+# Dependencies
+PerfectSlackAPIClient is using the following dependencies:
+
+* [PerfectAPIClient](https://github.com/SvenTiigi/PerfectAPIClient)
+
+# Contributing
+Contributions are very welcome 🙌 🤓
+
+# To-Do
+- [ ] Integrate the full Slack API
+- [ ] Improve Unit-Tests
+- [ ] Add Travis CI
+
+# License
+
+```
+MIT License
+
+Copyright (c) 2017 Sven Tiigi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
