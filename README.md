@@ -51,14 +51,21 @@ let package = Package(
 )
 ```
 
+# Setup
+In order to send a message to your Slack-Channel, you have to generate a `Webhook URL` for your Slack-Workspace.
+Checkout the Slack API [Hello world example](https://api.slack.com/tutorials/slack-apps-hello-world). After you successfully generated a Slack Webhook URL you can configure the `PerfectSlackAPIClient`.
+
+```swift
+// Configure the Webhook URL
+PerfectSlackAPIClient.Configuration.webhookURL = "YOUR_WEBHOOK_URL"
+```
+
+It is recommend to set the Webhook URL in your initialization code just before you start your `PerfectHTTPServer`.
+
 # Usage
 The following example demonstrates how to post a `SlackMessage`.
 
 ```swift
-
-// Configure the Webhook-URL
-PerfectSlackAPIClient.Configuration.webhookURL = "THE_WEBHOOK_URL"
-
 // Initialize SlackMessage
 var message = SlackMessage()
 message.text = "Hello Developer".toMarkdown(format: .code)
@@ -80,7 +87,21 @@ PerfectSlackAPIClient.send(message).request { (result: APIClientResult<APIClient
         // Perform error.analysis(....) to get more information
     }
 }
-
 ```
 
 Fore more details on `APIClientResult`, `APIClientResponse` and error handling check out [PerfectAPIClient](https://github.com/SvenTiigi/PerfectAPIClient).
+
+# Slack Message Builder Preview
+You can generate a [Slack Message Builder](https://api.slack.com/docs/messages/builder) URL from your `SlackMessage` to get a brief look of how your message will be presented in your Slack-Channel.
+
+```swift
+// Initialize SlackMessage
+var message = SlackMessage(text: "Posted via PerfectSlackAPIClient")
+
+// Configure the message...
+
+// Print Slack Message Builder Preview URL
+print(message.messageBuilderPreviewURL)
+```
+
+This example will generate the following url [https://api.slack.com/docs/messages/builder?msg=%7B%22text%22:%22Posted%20via%20PerfectSlackAPIClient%22%7D](https://api.slack.com/docs/messages/builder?msg=%7B%22text%22:%22Posted%20via%20PerfectSlackAPIClient%22%7D)
