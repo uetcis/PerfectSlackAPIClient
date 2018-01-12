@@ -75,6 +75,18 @@ public extension SlackAttachment {
         /// suggestions API endpoint. Defaults to 1.
         public var minQueryLength: Int?
         
+        /// Default initializer
+        ///
+        /// - Parameters:
+        ///   - name: The name
+        ///   - text: The text
+        ///   - type: The type
+        public init(name: String, text: String, type: ActionType) {
+            self.name = name
+            self.text = text
+            self.type = type
+        }
+        
     }
     
 }

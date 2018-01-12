@@ -26,6 +26,18 @@ public extension SlackAttachment.Action {
         /// A user-facing string that provides more details about this option. Also should contain up to 30 characters.
         public var description: String
         
+        /// Default initializer
+        ///
+        /// - Parameters:
+        ///   - text: The text
+        ///   - value: The value
+        ///   - description: The description
+        public init(text: String, value: String, description: String) {
+            self.text = text
+            self.value = value
+            self.description = description
+        }
+        
     }
     
 }

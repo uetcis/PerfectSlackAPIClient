@@ -89,6 +89,9 @@ public struct SlackAttachment {
     /// Does your attachment relate to something happening at a specific time?
     public var timestamp: Double?
     
+    /// Default initializer
+    public init() {}
+    
 }
 
 // MARK: Enums

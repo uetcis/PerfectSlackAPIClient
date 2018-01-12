@@ -28,6 +28,13 @@ public extension SlackAttachment.Action {
         /// The text label for the button to cancel the action. Keep it short. Defaults to Cancel.
         public var dismissText: String?
         
+        /// Default initializer
+        ///
+        /// - Parameter text: The text
+        public init(text: String) {
+            self.text = text
+        }
+        
     }
     
 }

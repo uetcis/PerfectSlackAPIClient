@@ -26,6 +26,9 @@ public extension SlackAttachment {
         /// to be displayed side-by-side with other values.
         public var short: Bool?
         
+        /// Default initializer
+        public init() {}
+        
     }
     
 }
