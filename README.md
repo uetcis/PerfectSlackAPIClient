@@ -56,7 +56,7 @@ The following example demonstrates how to post a `SlackMessage`.
 
 ```swift
 
-// Set the Webhook-URL
+// Configure the Webhook-URL
 PerfectSlackAPIClient.Configuration.webhookURL = "THE_WEBHOOK_URL"
 
 // Initialize SlackMessage
