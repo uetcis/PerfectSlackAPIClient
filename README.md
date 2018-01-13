@@ -63,7 +63,7 @@ Check out the Slack API [Hello world example](https://api.slack.com/tutorials/sl
 SlackAPIClient.Configuration.webhookURL = "YOUR_WEBHOOK_URL"
 ```
 
-It is recommend to set the Webhook URL in your initialization code just before you start your `PerfectHTTPServer`.
+It is recommended to set the Webhook URL in your initialization code just before you start your `PerfectHTTPServer`.
 
 # Usage
 The following example demonstrates how to send a `SlackMessage`.
