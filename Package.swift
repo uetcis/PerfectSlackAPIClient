@@ -11,7 +11,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/SvenTiigi/PerfectAPIClient.git", from: "1.0.0")
+        .package(url: "https://github.com/CaptainYukinoshitaHachiman/PerfectAPIClient.git", from: "1.0.0")
     ],
     targets: [
         .target(
